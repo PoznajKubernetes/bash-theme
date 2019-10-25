@@ -9,7 +9,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-source <(kubectl completion bash)
+alias k=kubectl
+source <(kubectl completion bash | sed 's/kubectl/k/g')
 
 #kubectx and kubens
 export PATH=~/.kubectx:$PATH
